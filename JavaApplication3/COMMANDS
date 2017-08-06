@@ -1,0 +1,4 @@
+javac -d out -cp libs/lib.jar src/app/Main.java
+java -cp "out;libs/lib.jar" app.Main
+jar cf libs/app.jar -C out .
+java -cp 'libs/*' app.Main

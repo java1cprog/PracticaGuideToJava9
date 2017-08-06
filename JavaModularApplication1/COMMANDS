@@ -1,0 +1,14 @@
+# do not worked
+javac -d out -cp 'libs/lib.jar' src/com.app/classes/module-info.java src/com.app/classes/app/Main.java
+
+javac -d out -p 'libs/greetings-1.0.jar' src/com.app/classes/module-info.java src/com.app/classes/app/Main.java
+
+java -p 'libs/greetings-1.0.jar;out' -m com.app/app.Main
+
+jar --create -f libs/app.jar -e app.Main -C out . 
+java -p libs -m com.app
+
+jdeps -s libs/greetings-1.0.jar
+
+	
+jdeps --generate-module-info generated-mods libs/greetings-1.0.jar libs/app.jar

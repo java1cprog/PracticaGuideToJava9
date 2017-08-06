@@ -1,0 +1,3 @@
+javac -d out src/app/Main.java
+
+java -cp out app.Main

@@ -1,0 +1,4 @@
+module greetings {
+    exports lib;
+
+}

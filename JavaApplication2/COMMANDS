@@ -1,0 +1,5 @@
+javac -d out src/lib/Greeting.java
+
+jar cf libs/lib.jar -C out .
+
+jar tf libs/lib.jar

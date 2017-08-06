@@ -1,0 +1,9 @@
+javac -d out  --module-source-path src src/greetings/module-info.java  src/greetings/lib/Greeting.java
+
+javac -d out  --module-source-path src $(find src/greetings -name *.java)
+javac -d out  --module-source-path src $(find src/app -name *.java)
+
+jar --module-version 0.1 -c -f libs/greetings-0.1.jar -C out/greetings .
+jar --module-version 0.1 -c -f libs/app.jar --main-class app.Main -C out/app .
+
+jlink -p "E:/Program Files/Java/jdk-9/jmods;libs" --add-modules app  --launcher start-app=app --strip-debug --compress=2 --output small-dist
